@@ -38,7 +38,12 @@ if __name__ == "__main__":
         # for str22 in file:
         #     print(str22)
         print(file.read())
+        
+        if str22 in open(LOG_FILENAME).read():
+            print("true")
+        else:
+            print("not true")
 
-    if str22 in open('WinnieJeng.txt').read():
-        print("true")
+    # if str22 in open('WinnieJeng.txt').read():
+    #     print("true")
     # do stuff

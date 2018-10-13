@@ -30,10 +30,15 @@ if __name__ == "__main__":
     args = parser.parse_args()
     print(args)
 
-    str = args.string
+    str22 = args.string
     # print(str)
 
     with args.log_file as file:
         print(LOG_FILENAME)
+        # for str22 in file:
+        #     print(str22)
         print(file.read())
+
+    if str22 in open('WinnieJeng.txt').read():
+        print("true")
     # do stuff

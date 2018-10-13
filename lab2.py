@@ -40,6 +40,14 @@ if __name__ == "__main__":
 
     file_name = args.log_file.name
     # print(file_name)
+    logging.basicConfig(filename=file_name,
+                        level=logging.INFO,
+                        format='%(asctime)s,%(message)s',
+                        datefmt='%m/%d/%Y %I:%M:%S %p')
+    try:
+        file = open(file_name, "a")
+    except IOError:
+        print("File not found")
 
     """The commented out section is an alternative way of finding the file name passed in from argparse"""
     # # convert args to string in order to search/extract the name of the passed-in file
@@ -71,7 +79,7 @@ if __name__ == "__main__":
         for line in lines:
             # if command line argument string is found in file, print line
             if re.search(args.string, line):
-                logging.info(" " + line)
+                logging.info(" "+line)
                 print(line)
 
         """this commented out snippet checks if my above code logic is correct"""
@@ -80,14 +88,14 @@ if __name__ == "__main__":
         # else:
         #     print("not true")
 
-    logging.basicConfig(filename=file_name,
-                        level=logging.INFO,
-                        format='%(asctime)s,%(message)s',
-                        datefmt='%m/%d/%Y %I:%M:%S %p')
-    try:
-        file = open(file_name, "a")
-    except IOError:
-        print("File not found")
+    # logging.basicConfig(filename=file_name,
+    #                     level=logging.INFO,
+    #                     format='%(asctime)s,%(message)s',
+    #                     datefmt='%m/%d/%Y %I:%M:%S %p')
+    # try:
+    #     file = open(file_name, "a")
+    # except IOError:
+    #     print("File not found")
 
     logging.info(" Program has started")
     logging.info(" command line options: --help, --log_file, --parse, --string")

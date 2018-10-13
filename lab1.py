@@ -16,7 +16,10 @@ def file_open(file):
 if __name__ == "__main__":
 
     # calling the file opening function
-    f = file_open("WinnieJeng.txt")
+    try:
+        f = file_open("WinnieJeng.txt")
+    except:
+        print("no file found")
 
     # list of my fav movies
     movies = ["Frozen", "Little Mermaid", "The Incredibles", "Lion King", "Tangled"]

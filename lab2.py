@@ -11,7 +11,7 @@ if __name__ == "__main__":
 
     # create argument for a log file
     parser.add_argument("--log_file",
-                        default=LOG_FILENAME,
+                        default="WinnieJeng.txt",
                         help="Pass in the log file",
                         type=argparse.FileType("r"),
                         action="store")
@@ -23,27 +23,31 @@ if __name__ == "__main__":
     # create argument for string file
     parser.add_argument("--string",
                         help="Search the string in the file that's passed in",
-                        # required=True,
+                        required=True,
                         type=str,
                         action="store")
 
     args = parser.parse_args()
     print(args)
 
-    str22 = args.string
+    # str22 = args.string
     # print(str)
 
     with args.log_file as file:
         print(LOG_FILENAME)
-        # for str22 in file:
-        #     print(str22)
+        # if re.findall(r'[a-zA-Z]+', LOG_FILENAME):
+        #     print("yes")
+        # else:
+        #     print("no")
+        # print(file)
         print(file.read())
-        
-        if str22 in open(LOG_FILENAME).read():
+
+        if args.string in open(LOG_FILENAME).read():
             print("true")
         else:
             print("not true")
 
-    # if str22 in open('WinnieJeng.txt').read():
+    # if args.string in open(LOG_FILENAME).read():
     #     print("true")
-    # do stuff
+    # else:
+    #     print("not true")

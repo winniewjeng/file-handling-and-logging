@@ -1,3 +1,5 @@
+
+
 def file_open(file):
     try:
         file = open(file, "w")

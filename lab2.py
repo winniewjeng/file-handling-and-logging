@@ -2,6 +2,7 @@ import sys, os, argparse, platform, logging, re
 
 if __name__ == "__main__":
 
+    """argument parser"""
     parser = argparse.ArgumentParser(
 
         # describe what this program does & how it works inside --help
@@ -27,52 +28,66 @@ if __name__ == "__main__":
                         type=str,
                         action="store")
 
-    # safely parse the command line arguments
+    """parsing begins"""
+    # safely parse the command line arguments in a try/except block
     try:
         args = parser.parse_args()
         # print(sys.argv)
     except argparse.ArgumentError:
-        print("ERROR PARSING THE COMMAND LINE ARGUMENT")
+        print("Cannot parse the command line argument")
         sys.exit()
 
+    """"set the three command line arguments to variables"""
+    # extract the log file from command line argument
     log_name = args.log_file
-    # extract the file_name to be parsed as passed in from command line
+    # extract the parsed file from command line argument
     file_name = args.parse
+    # extract the string to be searched from command line argument
     search_string = args.string
 
-    """NOT YET IMPLEMENTED TRY/CATCH!!!"""
-    # safely start the log with BasicConfig method
-    logging.basicConfig(filename=log_name,
-                        level=logging.INFO,
-                        # log should have date, time, logging level, and message
-                        format='%(asctime)s, %(levelname)s, %(message)s',
-                        datefmt='%m/%d/%Y %I:%M:%S %p')
+    """The commented out section is an alternative way of finding the passed-in file's name
+        # # convert args to string in order to search the passed-in file's name
+        # args_into_str = str(args)
 
-    logging.info(" ====================+==Log starts==================+====\n"
-                 " command line options: --help, --log_file, --parse, --string")
+        # # if the log file is found, open the log file,
+        # # set the file to file_name. Otherwise terminate the program
+        # name = re.search("name=\'(.+?)\'", args_into_str)
+        # file_name = name.group(1)
+
+        # if not os.path.exists(file_name):
+        #     parser.error("Invalid file name")
+        #     sys.exit()
+    """
+
+    """logging module begins"""
+    # safely start the log with BasicConfig method in a try/except block
+    try:
+        if log_name is not None:
+            logging.basicConfig(filename=log_name,
+                                level=logging.INFO,
+                                # log should have date, time, logging level, and message
+                                format='%(asctime)s, %(levelname)s, %(message)s',
+                                datefmt='%m/%d/%Y %I:%M:%S %p')
+    except ValueError:
+        print("Cannot log to a non-existent file")
+        logging.error("Cannot log to a non-existent file")
+        sys.exit()
+
+    logging.info(" =======================Log starts========================")
+    logging.info(" command line options: --help, --log_file, --parse, --string")
     # store platform info and login id inside variables and convert them to strings
     platform_info = str(platform.platform())
     login_id = str(os.getlogin())
+    platform_processor = str(platform.processor())
+    platform_version = str(platform.version())
     # log the platform_info and login_id
     logging.info(" user {} on platform {}".format(login_id, platform_info))
+    logging.info(" " + platform_version)
+    logging.info(" Processor {}".format(platform_processor))
     # logging.info(login_id)
 
-    """The commented out section is an alternative way of finding the passed-in file's name
-    # # convert args to string in order to search the passed-in file's name
-    # args_into_str = str(args)
-
-    # # if the log file is found, open the log file,
-    # # set the file to file_name. Otherwise terminate the program
-    # name = re.search("name=\'(.+?)\'", args_into_str)
-    # file_name = name.group(1)
-
-    # if not os.path.exists(file_name):
-    #     parser.error("Invalid file name")
-    #     sys.exit()
-    """
-
-    # # safely open the file
-
+    """searching and logging the searched string begins"""
+    # safely open the file
     try:
         # # create object file
         with open(file_name, 'r') as file:
@@ -86,26 +101,18 @@ if __name__ == "__main__":
             lines = file.readlines()
             # read file object line by line
             for line in lines:
-                # print("heoolo")
                 # search for the command line argument string
                 if re.search(search_string, line):
                     # # if found, log the entire line of where the string is found
                     # logging.info(line)
-                    logging.info(" {} found on line {}: ".format(search_string, line))
-            # flush and close the file
+                    logging.info(" {} found on line: {} ".format(search_string, line))
             file.flush()
             file.close()
     # gracefully exit the program if no file is found
     except IOError:
-        print("no file found")
-        logging.error("no file found!")
+        print("Cannot parse a non-existent file")
+        logging.error("Cannot parse a non-existent file")
+        logging.info(" =========================Log ends========================\n")
         sys.exit()
 
-    """this commented out snippet is my self-debug for the code above"""
-    # if args.string in open(file_name).read():
-    #     print("true")
-    # else:
-    #     print("not true")
     logging.info(" =========================Log ends========================\n")
-
-

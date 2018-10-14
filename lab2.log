@@ -1,82 +1,79 @@
-10/13/2018 06:40:22 PM, INFO,  ===========Log starts===========
- command line options: --help, --log_file, --parse, --string
-10/13/2018 06:40:22 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
-10/13/2018 06:40:22 PM, INFO,  10/13/2018 06:40:22 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
 
-10/13/2018 06:40:22 PM, INFO,  ===========Log ends===========
+10/13/2018 07:57:27 PM, INFO,  ====================+==Log starts==================+====
+10/13/2018 07:57:27 PM, INFO,  command line options: --help, --log_file, --parse, --string
+10/13/2018 07:57:27 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
+10/13/2018 07:57:27 PM, INFO,  import sys found on line: import sys, os, argparse, platform, logging, re
+ 
+10/13/2018 07:57:27 PM, INFO,  =========================Log ends========================
 
-10/13/2018 06:43:05 PM, INFO,  ===========Log starts===========
- command line options: --help, --log_file, --parse, --string
-10/13/2018 06:43:05 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
-10/13/2018 06:43:05 PM, INFO,  Darwin- found in line: 10/13/2018 06:40:22 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
+10/13/2018 07:57:56 PM, INFO,  ====================+==Log starts==================+====
+10/13/2018 07:57:56 PM, INFO,  command line options: --help, --log_file, --parse, --string
+10/13/2018 07:57:56 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
+10/13/2018 07:57:56 PM, ERROR, no file named boop.cfg found!
+10/13/2018 07:57:56 PM, INFO,  =========================Log ends========================
 
-10/13/2018 06:43:05 PM, INFO,  Darwin- found in line: 10/13/2018 06:40:22 PM, INFO,  10/13/2018 06:40:22 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
+10/13/2018 07:59:11 PM, INFO,  ====================+==Log starts==================+====
+10/13/2018 07:59:11 PM, INFO,  command line options: --help, --log_file, --parse, --string
+10/13/2018 07:59:11 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
+10/13/2018 07:59:11 PM, ERROR, no file named boop.cfg found!
+10/13/2018 07:59:11 PM, INFO,  =========================Log ends========================
 
-10/13/2018 06:43:05 PM, INFO,  Darwin- found in line: 10/13/2018 06:43:05 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
 
-10/13/2018 06:43:05 PM, INFO,  ===========Log ends===========
+10/13/2018 08:17:27 PM, INFO,  ====================+==Log starts==================+====
+10/13/2018 08:17:27 PM, INFO,  command line options: --help, --log_file, --parse, --string
+10/13/2018 08:17:27 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
+10/13/2018 08:17:27 PM, INFO,  logging.error found on line:         logging.error("Cannot log to a non-existent file")
+ 
+10/13/2018 08:17:27 PM, INFO,  logging.error found on line:         logging.error("Cannot parse a non-existent file")
+ 
+10/13/2018 08:17:27 PM, INFO,  =========================Log ends========================
 
-10/13/2018 06:44:14 PM, INFO,  ===========Log starts===========
- command line options: --help, --log_file, --parse, --string
-10/13/2018 06:44:14 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
-10/13/2018 06:44:14 PM, INFO,  ===========Log ends===========
+10/13/2018 08:17:54 PM, INFO,  ====================+==Log starts==================+====
+10/13/2018 08:17:54 PM, INFO,  command line options: --help, --log_file, --parse, --string
+10/13/2018 08:17:54 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
+10/13/2018 08:17:54 PM, INFO,  logging.error found on line:         logging.error("Cannot log to a non-existent file")
+ 
+10/13/2018 08:17:54 PM, INFO,  logging.error found on line:         logging.error("Cannot parse a non-existent file")
+ 
+10/13/2018 08:17:54 PM, INFO,  =========================Log ends========================
 
-10/13/2018 06:45:06 PM, INFO,  ===========Log starts===========
- command line options: --help, --log_file, --parse, --string
-10/13/2018 06:45:06 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
-10/13/2018 06:45:06 PM, INFO,  ===========Log ends===========
+10/13/2018 08:18:18 PM, INFO,  ====================+==Log starts==================+====
+10/13/2018 08:18:18 PM, INFO,  command line options: --help, --log_file, --parse, --string
+10/13/2018 08:18:18 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
+10/13/2018 08:18:18 PM, INFO,  Tangled found on line: Tangled                     Work           What is Your Name
+ 
+10/13/2018 08:18:18 PM, INFO,  =========================Log ends========================
 
-10/13/2018 06:50:24 PM, INFO,  ===========Log starts===========
- command line options: --help, --log_file, --parse, --string
-10/13/2018 06:50:24 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
-10/13/2018 06:50:24 PM, INFO,  ===========Log ends===========
+10/13/2018 08:19:04 PM, INFO,  =======================Log starts========================
+10/13/2018 08:19:04 PM, INFO,  command line options: --help, --log_file, --parse, --string
+10/13/2018 08:19:04 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
+10/13/2018 08:19:04 PM, INFO,  logging.error found on line:         logging.error("Cannot log to a non-existent file")
+ 
+10/13/2018 08:19:04 PM, INFO,  logging.error found on line:         logging.error("Cannot parse a non-existent file")
+ 
+10/13/2018 08:19:04 PM, INFO,  =========================Log ends========================
 
-10/13/2018 06:53:22 PM, INFO,  ===========Log starts===========
- command line options: --help, --log_file, --parse, --string
-10/13/2018 06:53:22 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
-10/13/2018 06:53:22 PM, INFO,  ===========Log ends===========
+10/13/2018 08:19:28 PM, INFO,  =======================Log starts========================
+10/13/2018 08:19:28 PM, INFO,  command line options: --help, --log_file, --parse, --string
+10/13/2018 08:19:28 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
+10/13/2018 08:19:28 PM, INFO,  Lion King found on line: Lion King                  School                        GUI
+ 
+10/13/2018 08:19:28 PM, INFO,  =========================Log ends========================
 
-10/13/2018 07:01:53 PM, INFO,  ====================+==Log starts==================+====
- command line options: --help, --log_file, --parse, --string
-10/13/2018 07:01:53 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
-10/13/2018 07:01:53 PM, INFO,  =========================Log ends========================
+10/13/2018 08:24:30 PM, INFO,  =======================Log starts========================
+10/13/2018 08:24:30 PM, INFO,  command line options: --help, --log_file, --parse, --string
+10/13/2018 08:24:30 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
+10/13/2018 08:24:30 PM, INFO,  Darwin Kernel Version 18.0.0: Wed Aug 22 20:13:40 PDT 2018; root:xnu-4903.201.2~1/RELEASE_X86_64 Processor i386
+10/13/2018 08:24:30 PM, INFO,  Monty found on line: Frozen                      Home                Monty Python
+ 
+10/13/2018 08:24:30 PM, INFO,  =========================Log ends========================
 
-10/13/2018 07:02:25 PM, INFO,  ====================+==Log starts==================+====
- command line options: --help, --log_file, --parse, --string
-10/13/2018 07:02:25 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
-10/13/2018 07:02:25 PM, INFO,  =========================Log ends========================
-
-10/13/2018 07:02:33 PM, INFO,  ====================+==Log starts==================+====
- command line options: --help, --log_file, --parse, --string
-10/13/2018 07:02:33 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
-10/13/2018 07:02:33 PM, INFO,  =========================Log ends========================
-
-10/13/2018 07:02:51 PM, INFO,  ====================+==Log starts==================+====
- command line options: --help, --log_file, --parse, --string
-10/13/2018 07:02:51 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
-10/13/2018 07:02:51 PM, INFO,  =========================Log ends========================
-
-10/13/2018 07:03:08 PM, INFO,  ====================+==Log starts==================+====
- command line options: --help, --log_file, --parse, --string
-10/13/2018 07:03:08 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
-10/13/2018 07:03:08 PM, INFO,  =========================Log ends========================
-
-10/13/2018 07:03:31 PM, INFO,  ====================+==Log starts==================+====
- command line options: --help, --log_file, --parse, --string
-10/13/2018 07:03:31 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
-10/13/2018 07:03:31 PM, INFO,  =========================Log ends========================
-
-10/13/2018 07:05:35 PM, INFO,  ====================+==Log starts==================+====
- command line options: --help, --log_file, --parse, --string
-10/13/2018 07:05:36 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
-10/13/2018 07:05:36 PM, INFO, import sys, os, argparse, platform, logging, re
-
-10/13/2018 07:05:36 PM, INFO,  =========================Log ends========================
-
-10/13/2018 07:06:50 PM, INFO,  ====================+==Log starts==================+====
- command line options: --help, --log_file, --parse, --string
-10/13/2018 07:06:50 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
-10/13/2018 07:06:50 PM, INFO,  import sys found on line import sys, os, argparse, platform, logging, re
-: 
-10/13/2018 07:06:50 PM, INFO,  =========================Log ends========================
+10/13/2018 08:25:51 PM, INFO,  =======================Log starts========================
+10/13/2018 08:25:51 PM, INFO,  command line options: --help, --log_file, --parse, --string
+10/13/2018 08:25:51 PM, INFO,  user winniferjeng on platform Darwin-18.0.0-x86_64-i386-64bit
+10/13/2018 08:25:51 PM, INFO,  Darwin Kernel Version 18.0.0: Wed Aug 22 20:13:40 PDT 2018; root:xnu-4903.201.2~1/RELEASE_X86_64
+10/13/2018 08:25:51 PM, INFO,  Processor i386
+10/13/2018 08:25:51 PM, INFO,  Monty found on line: Frozen                      Home                Monty Python
+ 
+10/13/2018 08:25:51 PM, INFO,  =========================Log ends========================
 

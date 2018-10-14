@@ -13,10 +13,7 @@ if __name__ == "__main__":
     parser.add_argument("--log_file",
                         default="lab2.log",  # WinnieJeng.txt
                         help="Pass in the log file",
-                        # # the bad line below prevented me from doing error handling!
-                        # # when I kept it, I couldn't handle any non-existent file
-                        # --the program just crashed. So good riddance
-                        # type=argparse.FileType("r"),
+                        # type=argparse.FileType("r"), # crashes if arg != existing file
                         action="store")
     # create argument for parse file
     parser.add_argument("--parse",
@@ -30,37 +27,38 @@ if __name__ == "__main__":
                         type=str,
                         action="store")
 
-    # parse command line arguments
+    # safely parse the command line arguments
     try:
         args = parser.parse_args()
         # print(sys.argv)
     except argparse.ArgumentError:
-        print("ERROR")
+        print("ERROR PARSING THE COMMAND LINE ARGUMENT")
         sys.exit()
 
-    file_name = args.log_file
+    log_name = args.log_file
+    # extract the file_name to be parsed as passed in from command line
+    file_name = args.parse
+    search_string = args.string
 
-    logging.basicConfig(filename=file_name,
+    """NOT YET IMPLEMENTED TRY/CATCH!!!"""
+    # safely start the log with BasicConfig method
+    logging.basicConfig(filename=log_name,
                         level=logging.INFO,
-                        format='%(asctime)s,%(message)s',
+                        # log should have date, time, logging level, and message
+                        format='%(asctime)s, %(levelname)s, %(message)s',
                         datefmt='%m/%d/%Y %I:%M:%S %p')
 
-    logging.info(" Program has started")
-    logging.info(" command line options: --help, --log_file, --parse, --string")
-    platform_info = str(" " + platform.platform())
-    logging.info(platform_info)
-    login_id = str(" " + os.getlogin())
-    logging.info(login_id)
+    logging.info(" ====================+==Log starts==================+====\n"
+                 " command line options: --help, --log_file, --parse, --string")
+    # store platform info and login id inside variables and convert them to strings
+    platform_info = str(platform.platform())
+    login_id = str(os.getlogin())
+    # log the platform_info and login_id
+    logging.info(" user {} on platform {}".format(login_id, platform_info))
+    # logging.info(login_id)
 
-    # try:
-    #     file = open(args.log_file, 'r')
-    #     print("success")
-    # except IOError:
-    #     print("no file found")
-    #     sys.exit()
-
-    """The commented out section is an alternative way of finding the file name passed in from argparse"""
-    # # convert args to string in order to search/extract the name of the passed-in file
+    """The commented out section is an alternative way of finding the passed-in file's name
+    # # convert args to string in order to search the passed-in file's name
     # args_into_str = str(args)
 
     # # if the log file is found, open the log file,
@@ -71,37 +69,43 @@ if __name__ == "__main__":
     # if not os.path.exists(file_name):
     #     parser.error("Invalid file name")
     #     sys.exit()
+    """
+
+    # # safely open the file
 
     try:
-        with open(args.log_file, 'r') as file:
-
-            # print(file_name)
-
-            f = open(file_name, 'r')
-            # f.close()
+        # # create object file
+        with open(file_name, 'r') as file:
+            # # create file object f
+            # file = open(file_name, 'r')
 
             # # this commented out snippet reads the file and prints out all of it
             # print(f.read())
 
-            # parse the file into lines
-            lines = f.readlines()
-            # read file line by line
+            # parse the file object into lines
+            lines = file.readlines()
+            # read file object line by line
             for line in lines:
-                # if command line argument string is found in file, print the entire line
-                if re.search(args.string, line):
-                    logging.info(" " + line)
-                    print(line)
-            f.close()
-    except:
+                # print("heoolo")
+                # search for the command line argument string
+                if re.search(search_string, line):
+                    # # if found, log the entire line of where the string is found
+                    # logging.info(line)
+                    logging.info(" {} found on line {}: ".format(search_string, line))
+            # flush and close the file
+            file.flush()
+            file.close()
+    # gracefully exit the program if no file is found
+    except IOError:
         print("no file found")
+        logging.error("no file found!")
         sys.exit()
 
-
-
-
-    """this commented out snippet is my self-DEBUG for the code above"""
+    """this commented out snippet is my self-debug for the code above"""
     # if args.string in open(file_name).read():
     #     print("true")
     # else:
     #     print("not true")
+    logging.info(" =========================Log ends========================\n")
+
 
